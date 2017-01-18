@@ -1,0 +1,18 @@
+target/
+### MAVEN ###
+!.mvn/wrapper/maven-wrapper.jar
+.mvn
+mvnw
+mvnw.cmd
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+
+### APACHE DERBY ###
+derby.log
+
+### BASH SCRIPTS ###
+run.sh
