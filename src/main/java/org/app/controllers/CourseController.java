@@ -1,7 +1,6 @@
 package org.app.controllers;
 
 import org.app.models.Course;
-import org.app.models.Topic;
 import org.app.services.CourseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
