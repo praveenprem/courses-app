@@ -32,13 +32,11 @@ public class CourseController {
 
     @RequestMapping(value = "/topics/{topicId}/courses", method = RequestMethod.POST)
     public void addCourse(@PathVariable String topicId, @RequestBody Course c) {
-        c.setTopic(new Topic(topicId, "", ""));
         courseService.addCourse(topicId, c);
     }
 
     @RequestMapping(value = "/topics/{topicId}/courses/{courseId}", method = RequestMethod.PUT)
     public void updateCourse(@PathVariable String topicId, @PathVariable String courseId, @RequestBody Course c) {
-        c.setTopic(new Topic(topicId, "", ""));
         courseService.updateCourse(topicId, c);
     }
 
