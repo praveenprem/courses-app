@@ -29,7 +29,7 @@ public class LoginController {
 
     @RequestMapping(value = "/auth/register", method = RequestMethod.POST)
     public boolean register(@RequestBody Customer customer) {
-        Customer c = new Customer("", customer.getEmail(), customer.getPlainPassword());
+        Customer c = new Customer(customer.getEmail(), customer.getPlainPassword());
         return customerService.save(c);
     }
 

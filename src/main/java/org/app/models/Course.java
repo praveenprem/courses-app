@@ -1,6 +1,7 @@
 package org.app.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -13,6 +14,7 @@ import javax.persistence.ManyToOne;
 @Entity
 public class Course {
     @Id
+    @GeneratedValue
     private String id;
     private String name;
     private String description;
@@ -23,8 +25,7 @@ public class Course {
     public Course() {
     }
 
-    public Course(String id, String name, String description) {
-        this.id = id;
+    public Course(String name, String description) {
         this.name = name;
         this.description = description;
     }

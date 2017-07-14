@@ -1,6 +1,7 @@
 package org.app.models;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 @Entity
 public class Customer {
     @Id
+    @GeneratedValue
     private String id;
 
     private String email;
@@ -23,14 +25,12 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(String id, String email, String plainPassword) {
-        this.id = id;
+    public Customer(String email, String plainPassword) {
         this.email = email;
         this.plainPassword = plainPassword;
     }
 
-    public Customer(String id, String email, String plainPassword, String encryptedPassword) {
-        this.id = id;
+    public Customer(String email, String plainPassword, String encryptedPassword) {
         this.email = email;
         this.plainPassword = plainPassword;
         this.encryptedPassword = encryptedPassword;

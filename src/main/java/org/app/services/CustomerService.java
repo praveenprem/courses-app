@@ -18,7 +18,7 @@ import java.util.List;
 @Service
 public class CustomerService {
     @Autowired
-    public CustomerRepository customerRepository;
+    private CustomerRepository customerRepository;
 
     public boolean loginSuccessful(Customer customer) {
         Customer u = customerRepository.findByEmail(customer.getEmail());
@@ -26,9 +26,8 @@ public class CustomerService {
     }
 
     public boolean save(Customer customer) {
-        customer.setId("");
+        System.out.println(customer);
         if (customerRepository.findByEmail(customer.getEmail()) == null) {
-            System.out.println(customer.toString());
             customer.setEncryptedPassword(BCrypt.hashpw(customer.getPlainPassword(), BCrypt.gensalt()));
             customer.setPlainPassword("");
             customerRepository.save(customer);
