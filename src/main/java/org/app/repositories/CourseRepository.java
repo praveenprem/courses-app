@@ -12,8 +12,8 @@ import java.util.List;
  * HAPPY CODING!
  */
 public interface CourseRepository extends CrudRepository<Course, String> {
-    public List<Course> findByTopicId(String topicId);
+    List<Course> findByTopicId(String topicId);
 
-    public Course findByName(String name);
+    Course findByName(String name);
 
 }

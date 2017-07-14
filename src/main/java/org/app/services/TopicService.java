@@ -18,7 +18,7 @@ import java.util.List;
 public class TopicService {
 
     @Autowired
-    public TopicRepository topicRepository;
+    private TopicRepository topicRepository;
 
     public List<Topic> getAllTopics() {
         List<Topic> topics = new ArrayList<>();

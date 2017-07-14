@@ -20,7 +20,7 @@ import java.util.List;
 public class LoginController {
 
     @Autowired
-    public CustomerService customerService;
+    private CustomerService customerService;
 
     @RequestMapping(value = "/auth/login", method = RequestMethod.POST)
     public boolean login(@RequestBody Customer customer) {

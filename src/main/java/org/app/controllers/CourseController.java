@@ -18,7 +18,7 @@ import java.util.List;
 public class CourseController {
 
     @Autowired
-    public CourseService courseService;
+    private CourseService courseService;
 
     @RequestMapping("/topics/{id}/courses")
     public List<Course> getAllCourses(@PathVariable String id) {

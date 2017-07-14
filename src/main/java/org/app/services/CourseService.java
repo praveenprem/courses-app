@@ -1,7 +1,6 @@
 package org.app.services;
 
 import org.app.models.Course;
-import org.app.models.Topic;
 import org.app.repositories.CourseRepository;
 import org.app.repositories.TopicRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +18,9 @@ import java.util.List;
 public class CourseService {
 
     @Autowired
-    public CourseRepository courseRepository;
+    private CourseRepository courseRepository;
     @Autowired
-    public TopicRepository topicRepository;
+    private TopicRepository topicRepository;
 
     public List<Course> getAllCourses(String id) {
         return courseRepository.findByTopicId(id);
