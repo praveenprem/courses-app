@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import java.math.BigInteger;
 
 /**
  * Author:  andreicovaciu;
@@ -15,7 +16,7 @@ import javax.persistence.ManyToOne;
 public class Course {
     @Id
     @GeneratedValue
-    private String id;
+    private int id;
     private String name;
     private String description;
 
@@ -30,11 +31,11 @@ public class Course {
         this.description = description;
     }
 
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(int id) {
         this.id = id;
     }
 
