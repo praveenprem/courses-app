@@ -17,13 +17,15 @@ public class Topic {
     private int id;
     private String name;
     private String description;
+    private Boolean available;
 
     public Topic() {
     }
 
-    public Topic(String name, String description) {
+    public Topic(String name, String description, Boolean available) {
         this.name = name;
         this.description = description;
+        this.available = available;
     }
 
     public int getId() {
@@ -48,5 +50,13 @@ public class Topic {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Boolean getAvailable() {
+        return available;
+    }
+
+    public void setAvailable(Boolean available) {
+        this.available = available;
     }
 }

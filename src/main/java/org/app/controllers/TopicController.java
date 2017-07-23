@@ -19,27 +19,27 @@ public class TopicController {
     @Autowired
     private TopicService topicService;
 
-    @RequestMapping("/api/topics")
+    @RequestMapping(value = "/api/topics", produces = "application/json")
     public List<Topic> getAllTopics() {
         return topicService.getAllTopics();
     }
 
-    @RequestMapping("/api/topics/{id}")
+    @RequestMapping(value = "/api/topics/{id}", produces = "application/json")
     public Topic getTopic(@PathVariable String id) {
         return topicService.getTopic(id);
     }
 
-    @RequestMapping(value = "/api/topics", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/topics", method = RequestMethod.POST, consumes = "application/json")
     public void addTopic(@RequestBody Topic t) {
         topicService.addTopic(t);
     }
 
-    @RequestMapping(value = "/api/topics/{id}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/topics/{id}", method = RequestMethod.PUT, consumes = "application/json")
     public void updateTopic(@PathVariable String id, @RequestBody Topic t) {
         topicService.updateTopic(t);
     }
 
-    @RequestMapping(value = "/api/topics/{id}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/topics/{id}", method = RequestMethod.DELETE, consumes = "application/json")
     public void deleteTopic(@PathVariable String id) {
         topicService.deleteTopic(id);
     }

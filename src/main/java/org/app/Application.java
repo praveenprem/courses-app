@@ -26,9 +26,9 @@ public class Application implements CommandLineRunner{
     @Override
     public void run(String... strings) throws Exception {
         /* Insert some dummy topics */
-        topicService.addTopic(new Topic("Spring Framework", "Welcome to the most popular Java framework!"));
-        topicService.addTopic(new Topic("Angular JS", "Welcome to Angular JS!"));
-        topicService.addTopic(new Topic("Angular 2", "Welcome to Angular 2!"));
+        topicService.addTopic(new Topic("Spring Framework", "Welcome to the most popular Java framework!", Boolean.TRUE));
+        topicService.addTopic(new Topic("Angular JS", "Welcome to Angular JS!", Boolean.FALSE));
+        topicService.addTopic(new Topic("Angular 2", "Welcome to Angular 2!", Boolean.TRUE));
     }
 
 }
