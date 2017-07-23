@@ -19,27 +19,27 @@ public class CourseController {
     @Autowired
     private CourseService courseService;
 
-    @RequestMapping("/topics/{id}/courses")
+    @RequestMapping("/api/topics/{id}/courses")
     public List<Course> getAllCourses(@PathVariable String id) {
         return courseService.getAllCourses(id);
     }
 
-    @RequestMapping("/topics/{topicId}/courses/{courseId}")
+    @RequestMapping("/api/topics/{topicId}/courses/{courseId}")
     public Course getCourse(@PathVariable String courseId) {
         return courseService.getCourse(courseId);
     }
 
-    @RequestMapping(value = "/topics/{topicId}/courses", method = RequestMethod.POST)
+    @RequestMapping(value = "/api/topics/{topicId}/courses", method = RequestMethod.POST)
     public void addCourse(@PathVariable String topicId, @RequestBody Course c) {
         courseService.addCourse(topicId, c);
     }
 
-    @RequestMapping(value = "/topics/{topicId}/courses/{courseId}", method = RequestMethod.PUT)
+    @RequestMapping(value = "/api/topics/{topicId}/courses/{courseId}", method = RequestMethod.PUT)
     public void updateCourse(@PathVariable String topicId, @PathVariable String courseId, @RequestBody Course c) {
         courseService.updateCourse(topicId, c);
     }
 
-    @RequestMapping(value = "/topics/{topicId}/courses/{courseId}", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/api/topics/{topicId}/courses/{courseId}", method = RequestMethod.DELETE)
     public void deleteCourse(@PathVariable String courseId) {
         courseService.deleteCourse(courseId);
     }

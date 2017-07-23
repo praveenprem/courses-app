@@ -1,0 +1,27 @@
+<div class="jumbotron">
+  <h2>Topics</h2>
+  <p>The following table contains the available topics.</p>
+  <p>Edit a topic by clicking it from the table: </p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Available</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let topic of topics" (click)="onSelect(topic)">
+      <td>{{topic.name}}</td>
+      <td>{{topic.description}}</td>
+      <td *ngIf="topic.available == true">
+        <button type="button" class="btn btn-success">Available</button>
+      </td>
+      <td *ngIf="topic.available == false">
+        <button type="button" class="btn btn-danger disabled">Not Available</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <topic-detail [topic]="selectedTopic"></topic-detail>
+</div>
