@@ -6,10 +6,10 @@ import org.springframework.context.annotation.Configuration;
 
 import java.net.URISyntaxException;
 
-@Configuration
+//@Configuration
 public class DatabaseConfig {
 
-    @Bean
+  //  @Bean
     public BasicDataSource dataSource() throws URISyntaxException {
         String dbUrl = System.getenv("JDBC_DATABASE_URL");
         String username = System.getenv("JDBC_DATABASE_USERNAME");
