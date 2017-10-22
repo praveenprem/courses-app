@@ -1,0 +1,17 @@
+<div class="jumbotron" *ngIf="topic">
+  <p>
+    topic-detail editor!
+  </p>
+  <p>Edit topic name:
+    <input [(ngModel)]="topic.name" placeholder="name">
+  </p>
+  <p>Edit topic description:
+    <input style="width: 300px" [(ngModel)]="topic.description" placeholder="description">
+  </p>
+  <p>Edit topic status:
+    <button type="button" class="btn btn-success" (click)="topic.available=true">Available</button>
+    <button type="button" class="btn btn-danger" (click)="topic.available=false">Not available</button>
+  </p>
+  <button style="width: 100px;" (click)="saveTopicName(topic)" class="btn btn-primary">Save!</button>
+  <button style="width: 100px;" (click)="deleteTopic(topic)" class="btn-danger">Delete topic</button>
+</div>

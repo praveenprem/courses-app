@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Topic} from "./topic";
-import {TopicService} from "./topic.service";
+import {Topic} from "../topic";
+import {TopicService} from "../topic.service";
 
 @Component({
   selector: 'topic-detail',
@@ -16,5 +16,10 @@ export class TopicDetailComponent {
   saveTopicName(topic: Topic) : void {
     console.log(topic);
     this.topicService.putTopic(topic);
+  }
+
+  deleteTopic(topic: Topic) : void {
+    this.topicService.deleteTopic(topic);
+    location.reload();
   }
 }

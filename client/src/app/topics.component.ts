@@ -26,4 +26,7 @@ export class TopicsComponent implements OnInit {
   onSelect(topic: Topic): void {
     this.selectedTopic = topic;
   }
+  refreshTopics() {
+    location.reload();
+  }
 }

@@ -2,6 +2,7 @@ package org.app.models;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 /**
@@ -14,7 +15,7 @@ import javax.persistence.Id;
 public class Topic {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String name;
     private String description;
     private Boolean available;
@@ -28,11 +29,11 @@ public class Topic {
         this.available = available;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

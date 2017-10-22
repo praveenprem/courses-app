@@ -9,5 +9,5 @@ import org.springframework.data.repository.CrudRepository;
  *
  * HAPPY CODING!
  */
-public interface TopicRepository extends CrudRepository<Topic, String> {
+public interface TopicRepository extends CrudRepository<Topic, Long> {
 }

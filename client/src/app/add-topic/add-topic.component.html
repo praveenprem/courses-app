@@ -1,0 +1,24 @@
+<style>
+  p, input, button, div {
+    text-align: center;
+  }
+</style>
+<div class="jumbotron">
+  <button type="button" routerLink="/topics"><span class="glyphicon glyphicon-chevron-left"></span>Back to topics</button>
+  <h2>Add topic</h2>
+
+  <p>Name</p>
+  <input id="topicName" [(ngModel)]="topic.name" type="text">
+
+  <p>Description</p>
+  <input [(ngModel)]="topic.description" id="topicDescription" type="text">
+
+  <p>Status</p>
+  <button type="button" (click)="topic.available = true" class="btn btn-success">Available</button>
+  <button type="button" (click)="topic.available = false" class="btn btn-danger">Available</button>
+
+  <br><br>
+
+  <button type="button" class="btn btn-primary" (click)="addTopic(topic)" routerLink="/topics">Add Topic</button>
+
+</div>

@@ -35,7 +35,7 @@ public class CourseController {
     }
 
     @RequestMapping(value = "/api/topics/{topicId}/courses/{courseId}", method = RequestMethod.PUT)
-    public void updateCourse(@PathVariable String topicId, @PathVariable String courseId, @RequestBody Course c) {
+    public void updateCourse(@PathVariable long topicId, @PathVariable String courseId, @RequestBody Course c) {
         courseService.updateCourse(topicId, c);
     }
 

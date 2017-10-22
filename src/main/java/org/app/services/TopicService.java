@@ -26,7 +26,7 @@ public class TopicService {
         return topics;
     }
 
-    public Topic getTopic(String id) {
+    public Topic getTopic(long id) {
         return topicRepository.findOne(id);
     }
 
@@ -38,7 +38,7 @@ public class TopicService {
         topicRepository.save(t);
     }
 
-    public void deleteTopic(String id) {
+    public void deleteTopic(long id) {
         topicRepository.delete(id);
     }
 }

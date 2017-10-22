@@ -34,7 +34,7 @@ public class CourseService {
         courseRepository.save(c);
     }
 
-    public void updateCourse(String topicId, Course c) {
+    public void updateCourse(long topicId, Course c) {
         c.setTopic(topicRepository.findOne(topicId));
         courseRepository.save(c);
     }

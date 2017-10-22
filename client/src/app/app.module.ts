@@ -5,16 +5,18 @@ import {RouterModule} from "@angular/router"
 import {HttpModule} from '@angular/http';
 
 import {TopicsComponent} from './topics.component';
-import {TopicDetailComponent} from './topic-detail.component';
+import {TopicDetailComponent} from './topic-detail/topic-detail.component';
 import {AppComponent} from "./app.component";
 import {TopicService} from "./topic.service";
+import { AddTopicComponent } from './add-topic/add-topic.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     TopicDetailComponent,
-    TopicsComponent
+    TopicsComponent,
+    AddTopicComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +26,10 @@ import {TopicService} from "./topic.service";
       {
         path: 'topics',
         component: TopicsComponent
+      },
+      {
+        path: 'addTopic',
+        component: AddTopicComponent
       }
     ])
   ],

@@ -25,7 +25,7 @@ public class TopicController {
     }
 
     @RequestMapping(value = "/api/topics/{id}", produces = "application/json")
-    public Topic getTopic(@PathVariable String id) {
+    public Topic getTopic(@PathVariable long id) {
         return topicService.getTopic(id);
     }
 
@@ -40,7 +40,7 @@ public class TopicController {
     }
 
     @RequestMapping(value = "/api/topics/{id}", method = RequestMethod.DELETE, consumes = "application/json")
-    public void deleteTopic(@PathVariable String id) {
+    public void deleteTopic(@PathVariable long id) {
         topicService.deleteTopic(id);
     }
 }

@@ -32,4 +32,21 @@ export class TopicService {
       .catch(this.handleError);
   }
 
+  postTopic(topic: Topic): void {
+    let options = new RequestOptions({ headers: this.headers });
+    let endpoint = "/api/topics/";
+    this.http.post(endpoint, JSON.stringify(topic), options)
+      .toPromise()
+      .then(() => topic)
+      .catch(this.handleError);
+  }
+
+  deleteTopic(topic: Topic): void {
+    let options = new RequestOptions({ headers: this.headers });
+    let endpoint = "/api/topics/" + topic.id;
+    this.http.delete(endpoint, options)
+      .toPromise()
+      .then(() => topic)
+      .catch(this.handleError);
+  }
 }
