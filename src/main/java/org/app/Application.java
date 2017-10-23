@@ -7,12 +7,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- * <p>
- * HAPPY CODING!
- */
+
 @SpringBootApplication
 public class Application implements CommandLineRunner{
 

@@ -7,41 +7,40 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- *
- * HAPPY CODING!
- */
 @RestController
 public class CourseController {
 
     @Autowired
     private CourseService courseService;
 
-    @RequestMapping("/api/topics/{id}/courses")
-    public List<Course> getAllCourses(@PathVariable String id) {
-        return courseService.getAllCourses(id);
+    @RequestMapping("/api/topics/{topicId}/courses")
+    public List<Course> getAllCoursesByTopic(@PathVariable long topicId) {
+        return courseService.getAllCourses(topicId);
     }
 
     @RequestMapping("/api/topics/{topicId}/courses/{courseId}")
-    public Course getCourse(@PathVariable String courseId) {
+    public Course getCourse(@PathVariable long courseId) {
         return courseService.getCourse(courseId);
     }
 
     @RequestMapping(value = "/api/topics/{topicId}/courses", method = RequestMethod.POST)
-    public void addCourse(@PathVariable String topicId, @RequestBody Course c) {
-        courseService.addCourse(topicId, c);
+    public void addCourse(@PathVariable long topicId, @RequestBody Course c) {
+        courseService.addCourse(c);
     }
 
-    @RequestMapping(value = "/api/topics/{topicId}/courses/{courseId}", method = RequestMethod.PUT)
-    public void updateCourse(@PathVariable long topicId, @PathVariable String courseId, @RequestBody Course c) {
+    @RequestMapping(value = "/api/topics/{topicId}/courses", method = RequestMethod.PUT)
+    public void updateCourse(@PathVariable long topicId, @RequestBody Course c) {
         courseService.updateCourse(topicId, c);
     }
 
     @RequestMapping(value = "/api/topics/{topicId}/courses/{courseId}", method = RequestMethod.DELETE)
-    public void deleteCourse(@PathVariable String courseId) {
+    public void deleteCourse(@PathVariable long topicId, @PathVariable long courseId) {
         courseService.deleteCourse(courseId);
+    }
+
+    @GetMapping("/api/courses")
+    public List<Course> getAllCourses() {
+        return courseService.getAllCourses();
     }
 
 }

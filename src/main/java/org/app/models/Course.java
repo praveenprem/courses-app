@@ -5,17 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- *
- * HAPPY CODING!
- */
+
 @Entity
 public class Course {
     @Id
     @GeneratedValue
-    private int id;
+    private long id;
     private String name;
     private String description;
 
@@ -30,11 +25,11 @@ public class Course {
         this.description = description;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

@@ -5,12 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- *
- * HAPPY CODING!
- */
 @Entity
 public class Topic {
     @Id

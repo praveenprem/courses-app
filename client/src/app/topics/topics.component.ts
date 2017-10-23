@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Topic} from "./topic";
-import {TopicService} from "./topic.service";
+import {Topic} from "../model/topic";
+import {TopicService} from "../service/topic.service";
 
 @Component({
   selector: 'topics',
@@ -13,7 +13,6 @@ export class TopicsComponent implements OnInit {
     this.getTopics();
   }
 
-  selectedTopic: Topic;
   topics: Topic[];
 
   constructor(private topicService: TopicService) {
@@ -24,9 +23,9 @@ export class TopicsComponent implements OnInit {
   }
 
   onSelect(topic: Topic): void {
-    this.selectedTopic = topic;
-  }
-  refreshTopics() {
-    location.reload();
+    console.log(topic.id + " " + topic.name + " " + topic.description + " " + topic.available);
+    // this.selectedTopic = selectedTopic;
+    this.topicService.setSelectedTopic(topic);
+    this.topicService.setTopics(this.topics);
   }
 }

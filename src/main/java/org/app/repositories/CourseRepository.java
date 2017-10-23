@@ -5,15 +5,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- *
- * HAPPY CODING!
- */
-public interface CourseRepository extends CrudRepository<Course, String> {
-    List<Course> findByTopicId(String topicId);
+public interface CourseRepository extends CrudRepository<Course, Long> {
+    List<Course> findByTopicId(long topicId);
 
     Course findByName(String name);
 
+    void deleteByName(String name);
+
+    void deleteById(long id);
 }

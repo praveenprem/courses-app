@@ -8,12 +8,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Author:  andreicovaciu;
- * Date:    18-Jan-17.
- *
- * HAPPY CODING!
- */
 @Service
 public class TopicService {
 

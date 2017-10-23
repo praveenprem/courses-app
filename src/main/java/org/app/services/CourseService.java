@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import com.google.common.collect.Lists;
 
 /**
  * Author:  andreicovaciu;
@@ -22,15 +23,19 @@ public class CourseService {
     @Autowired
     private TopicRepository topicRepository;
 
-    public List<Course> getAllCourses(String id) {
+    public List<Course> getAllCourses(long id) {
         return courseRepository.findByTopicId(id);
     }
 
-    public Course getCourse(String id) {
+    public List<Course> getAllCourses() {
+        return Lists.newArrayList(courseRepository.findAll());
+    }
+
+    public Course getCourse(long id) {
         return courseRepository.findOne(id);
     }
 
-    public void addCourse(String topicId, Course c) {
+    public void addCourse(Course c) {
         courseRepository.save(c);
     }
 
@@ -39,7 +44,7 @@ public class CourseService {
         courseRepository.save(c);
     }
 
-    public void deleteCourse(String id) {
+    public void deleteCourse(long id) {
         courseRepository.delete(id);
     }
 

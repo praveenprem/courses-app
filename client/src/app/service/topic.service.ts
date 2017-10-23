@@ -1,10 +1,24 @@
 import {Injectable} from "@angular/core";
-import {Topic} from "./topic";
+import {Topic} from "../model/topic";
 import {Headers, Http, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 export class TopicService {
+
+  selectedTopic: Topic;
+  topics: Topic[];
+
+  // selected selectedTopic to share data between Topic and TopicDetail component
+  setSelectedTopic(topic: Topic) {
+    this.selectedTopic = topic;
+  }
+
+  setTopics(topics: Topic[]) {
+    console.log("setting topics " + topics);
+    this.topics = topics;
+  }
+
   private headers = new Headers({'Content-Type': 'application/json'});
   result: Promise<Topic[]>;
   constructor(private http: Http) { }

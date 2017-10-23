@@ -4,11 +4,12 @@ import {FormsModule} from '@angular/forms';
 import {RouterModule} from "@angular/router"
 import {HttpModule} from '@angular/http';
 
-import {TopicsComponent} from './topics.component';
+import {TopicsComponent} from './topics/topics.component';
 import {TopicDetailComponent} from './topic-detail/topic-detail.component';
 import {AppComponent} from "./app.component";
-import {TopicService} from "./topic.service";
+import {TopicService} from "./service/topic.service";
 import { AddTopicComponent } from './add-topic/add-topic.component';
+import { CoursesComponent } from './courses/courses.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import { AddTopicComponent } from './add-topic/add-topic.component';
     AppComponent,
     TopicDetailComponent,
     TopicsComponent,
-    AddTopicComponent
+    AddTopicComponent,
+    CoursesComponent
   ],
   imports: [
     BrowserModule,
@@ -30,6 +32,10 @@ import { AddTopicComponent } from './add-topic/add-topic.component';
       {
         path: 'addTopic',
         component: AddTopicComponent
+      },
+      {
+        path: 'topicDetail',
+        component: TopicDetailComponent
       }
     ])
   ],

@@ -1,9 +1,7 @@
 <div class="jumbotron">
 
   <h2 style="display: inline-block; margin-right: 10px">Topics
-  </h2><a style="display: inline-block; width: 30px" (click)="refreshTopics()">
-  <span class="glyphicon glyphicon-refresh"></span>
-</a>
+  </h2>
   <p>The following table contains the available topics.</p>
   <p>Edit a topic by clicking it from the table: </p>
   <table class="table">
@@ -15,7 +13,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let topic of topics" (click)="onSelect(topic)">
+    <tr *ngFor="let topic of topics" (click)="onSelect(topic)" routerLink="/topicDetail">
       <td>{{topic.name}}</td>
       <td>{{topic.description}}</td>
       <td *ngIf="topic.available == true">
@@ -27,6 +25,5 @@
     </tr>
     </tbody>
   </table>
-  <topic-detail [topic]="selectedTopic"></topic-detail>
   <button type="button" class="btn-primary" routerLink="/addTopic">Add topic</button>
 </div>

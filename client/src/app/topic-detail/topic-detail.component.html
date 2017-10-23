@@ -1,17 +1,17 @@
-<div class="jumbotron" *ngIf="topic">
+<div class="jumbotron" *ngIf="selectedTopic">
   <p>
     topic-detail editor!
   </p>
   <p>Edit topic name:
-    <input [(ngModel)]="topic.name" placeholder="name">
+    <input [(ngModel)]="selectedTopic.name" placeholder="name">
   </p>
   <p>Edit topic description:
-    <input style="width: 300px" [(ngModel)]="topic.description" placeholder="description">
+    <input style="width: 300px" [(ngModel)]="selectedTopic.description" placeholder="description">
   </p>
   <p>Edit topic status:
-    <button type="button" class="btn btn-success" (click)="topic.available=true">Available</button>
-    <button type="button" class="btn btn-danger" (click)="topic.available=false">Not available</button>
+    <button type="button" class="btn btn-success" (click)="selectedTopic.available=true">Available</button>
+    <button type="button" class="btn btn-danger" (click)="selectedTopic.available=false">Not available</button>
   </p>
-  <button style="width: 100px;" (click)="saveTopicName(topic)" class="btn btn-primary">Save!</button>
-  <button style="width: 100px;" (click)="deleteTopic(topic)" class="btn-danger">Delete topic</button>
+  <button style="width: 100px;" (click)="saveTopicName(selectedTopic)" class="btn btn-primary">Save!</button>
+  <button style="width: 100px;" (click)="deleteTopic(selectedTopic)" class="btn-danger">Delete topic</button>
 </div>
